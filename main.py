@@ -170,14 +170,14 @@ if len(list_of_files) != 0:
         with st.spinner('Analizing prompt...'):
             response = call.run(prompt)
             save_results(prompt, response)
-            
+    st.markdown("""---""")        
     show_results()
 
 
-# hide_streamlit_style = """
-#             <style>
-#             #MainMenu {visibility: hidden;}
-#             footer {visibility: hidden;}
-#             </style>
-#             """
-# st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
