@@ -1,17 +1,12 @@
 from langchain.document_loaders.generic import GenericLoader
 from langchain.document_loaders.parsers import OpenAIWhisperParser
 from langchain.document_loaders.blob_loaders.youtube_audio import YoutubeAudioLoader
-import os,shutil
-
-from dotenv import load_dotenv
+import os, shutil, docx
 from io import StringIO
-import os
-import docx
 from tika import parser 
-from dotenv import load_dotenv
+import streamlit as st
 
-load_dotenv(".env")
-OPEN_AI_API_KEY = os.getenv("OPEN_AI_API_KEY")
+OPEN_AI_API_KEY = st.secrets["OPEN_AI_API_KEY"]
 directory = "./data/"
 save_dir="transcript/"
 

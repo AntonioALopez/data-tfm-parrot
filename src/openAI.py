@@ -3,12 +3,11 @@ from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from dotenv import load_dotenv
+import streamlit as st
 import os
 
 directory = "./data/"
-load_dotenv(".env")
-OPEN_AI_API_KEY = os.getenv("OPEN_AI_API_KEY")
+OPEN_AI_API_KEY = st.secrets["OPEN_AI_API_KEY"]
   
 def text_selector(name):
     path = f"{directory}{name}.txt"
