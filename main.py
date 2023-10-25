@@ -15,7 +15,7 @@ if not os.path.exists(path):
     
 # Page title
 st.set_page_config(page_title='Ask the Doc App', page_icon='🦜')
-st.title('🦜 Ask the Doc App')
+st.title(' Ask the Parrot App')
 
 st.write("""*Enter the text you want to analyze*""")
 
@@ -60,19 +60,19 @@ def youtube_form():
                 submit_button = st.form_submit_button("Submit URL")
                 if submit_button:
                     with st.spinner('Extracting text from video...'):
-                        # try:
-                        extraction = youtubeExtractor([url], name)
-                        if extraction == 1:
-                            st.warning(f" URL or name empty", icon="⚠️")
+                        try:
+                            extraction = youtubeExtractor([url], name)
+                            if extraction == 1:
+                                st.warning(f" URL or name empty", icon="⚠️")
+                                
+                            if extraction == 2:
+                                st.success(f" {name}.txt already saved on database", icon="✅")
                             
-                        if extraction == 2:
-                            st.success(f" {name}.txt already saved on database", icon="✅")
-                        
-                        if extraction == 3:
-                            st.success(f" {name}.txt saved on database", icon="✅")
+                            if extraction == 3:
+                                st.success(f" {name}.txt saved on database", icon="✅")
                             
-                        # except:
-                        #     st.warning('URL not valid')
+                        except:
+                            st.warning('URL not valid')
                             
 def text_form():
     with st.form("text-extract-text"):
@@ -140,7 +140,7 @@ def pdf_form():
     
 
 with st.sidebar:
-    image = Image.open('dog.jpg')
+    image = Image.open('parrot_innovative2.png')
 
     st.image(image)
     choice = st.selectbox("Select input type:",
@@ -168,7 +168,7 @@ if len(list_of_files) != 0:
         st.text_area('Text Selected:', value=string_data)
         call = gpt_call(string_data)
         
-    prompt = st.chat_input("Say something")
+    prompt = st.chat_input("Ask something")
     if prompt:
         with st.spinner('Analizing prompt...'):
             response = call.run(prompt)
