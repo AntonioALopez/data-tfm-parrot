@@ -8,7 +8,7 @@ import streamlit as st
 
 OPEN_AI_API_KEY = st.secrets["open-key"]
 directory = "./data/"
-save_dir="transcript/"
+save_dir="transcript"
 
 def youtubeExtractor(url, name):
     '''Extracts text from Youtube URL'''
