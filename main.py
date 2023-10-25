@@ -57,19 +57,19 @@ def youtube_form():
                 submit_button = st.form_submit_button("Submit URL")
                 if submit_button:
                     with st.spinner('Extracting text from video...'):
-                        try:
-                            extraction = youtubeExtractor([url], name)
-                            if extraction == 1:
-                                st.warning(f" URL or name empty", icon="⚠️")
-                                
-                            if extraction == 2:
-                                st.success(f" {name}.txt already saved on database", icon="✅")
+                        # try:
+                        extraction = youtubeExtractor([url], name)
+                        if extraction == 1:
+                            st.warning(f" URL or name empty", icon="⚠️")
                             
-                            if extraction == 3:
-                                st.success(f" {name}.txt saved on database", icon="✅")
-                                
-                        except:
-                            st.warning('URL not valid')
+                        if extraction == 2:
+                            st.success(f" {name}.txt already saved on database", icon="✅")
+                        
+                        if extraction == 3:
+                            st.success(f" {name}.txt saved on database", icon="✅")
+                            
+                        # except:
+                        #     st.warning('URL not valid')
                             
 def text_form():
     with st.form("text-extract-text"):
