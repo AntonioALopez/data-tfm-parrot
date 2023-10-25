@@ -137,7 +137,7 @@ def pdf_form():
     
 
 with st.sidebar:
-    image = Image.open('parrot_innovative2.png')
+    image = Image.open('dog.jpg')
 
     st.image(image)
     choice = st.selectbox("Select input type:",
