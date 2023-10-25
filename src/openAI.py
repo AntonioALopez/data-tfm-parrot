@@ -7,7 +7,7 @@ import streamlit as st
 import os
 
 directory = "./data/"
-OPEN_AI_API_KEY = st.secrets["OPEN_AI_API_KEY"]
+OPEN_AI_API_KEY = st.secrets["open-key"]
   
 def text_selector(name):
     path = f"{directory}{name}.txt"

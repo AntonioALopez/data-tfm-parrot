@@ -6,7 +6,7 @@ from io import StringIO
 from tika import parser 
 import streamlit as st
 
-OPEN_AI_API_KEY = st.secrets["OPEN_AI_API_KEY"]
+OPEN_AI_API_KEY = st.secrets["open-key"]
 directory = "./data/"
 save_dir="transcript/"
 
