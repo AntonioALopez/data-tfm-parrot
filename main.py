@@ -4,6 +4,9 @@ from src.docsLoader import *
 import streamlit as st
 from PIL import Image
 
+# from dotenv import load_dotenv
+# load_dotenv(".env")
+# OPEN_AI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPEN_AI_API_KEY = st.secrets["open-key"]
 
 path = 'data/'

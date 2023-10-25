@@ -6,7 +6,11 @@ from io import StringIO
 from tika import parser 
 import streamlit as st
 
+# from dotenv import load_dotenv
+# load_dotenv(".env")
+# OPEN_AI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPEN_AI_API_KEY = st.secrets["open-key"]
+
 directory = "./data/"
 save_dir="transcript"
 
@@ -14,21 +18,23 @@ def youtubeExtractor(url, name):
     '''Extracts text from Youtube URL'''
     if name == '' or url[0] == '':
         return 1
-    
+
     if checker(name) == 'exists':
         return 2
-    st.warning("before loader")
+
+    if os.path.exists(save_dir):
+        shutil.rmtree(save_dir)
+
+    os.mkdir(save_dir)
     loader = GenericLoader(
         YoutubeAudioLoader(url,save_dir),
         OpenAIWhisperParser()
     )
-    st.warning("after loader")
     docs = loader.load()
-    st.warning("after after loader")
+
     combined_docs = [doc.page_content for doc in docs]
-    st.warning("after after after loader")
     string_data = " ".join(combined_docs)
-    st.warning("before loader")
+
     save_txt(string_data, name)
     return 3
         

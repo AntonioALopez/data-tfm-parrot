@@ -7,6 +7,10 @@ import streamlit as st
 import os
 
 directory = "./data/"
+
+# from dotenv import load_dotenv
+# load_dotenv(".env")
+# OPEN_AI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPEN_AI_API_KEY = st.secrets["open-key"]
   
 def text_selector(name):
