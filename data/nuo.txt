@@ -1,0 +1,95 @@
+************************************ FARMHUB CONFIG HTTP JOB *************************************
+
+1º Generar maestros (CATALOG)
+	-Crear un datasource en caso de que no exista (SolarGis, GreenEagle, Gpm)
+
+	-Crear un data provider en caso de que no exista
+		-Se crea desde el swagger (https://ms-dev.farmhub.renantis.com/coordinator/swagger/index.html, llamada POST del dataProviders)
+		-Pide una key unica, un nombre y una descripcion. Ej: (Key: 'SolarGisApi', Name: 'Solar Gis Api', Description: 'Llamadas por api de solargis')
+		-Es una mezcla entre datasource y tipo de proveedor del dato (SolarGisApi, SolarGisFtp, SolarGisSQL)
+		-Se utilizaba antiguamente porque en mongo se spliteaban los datos por año y dataprovider
+
+	-Crear un entityType (Este es debido a que se va a usar para convertir los datos raw a los datos normalizados)
+		-Estos se rellenara con datasource y provider, y solo se añadira algo mas si tienes para el mismo device type, datasource y provider distintas fuentes 
+			(SolarGis api generic, SolarGis api generic 2, SolarGis ftp generic, ...)
+		-Se utilizara para configurar los semantic discriminator, que son los que transforman los nombres de propiedades raw a los semanticos
+
+
+
+2º Creamos la tareita con la calma (COORDINATOR)
+	-Clonar siempre que podamos de una parecida
+	-Cada campo es un mundo, y cada tipo (http, ftp, sql, ...) otro, en el caso de http:
+	{
+		"dataProviderKey": "JSON", => Data provider que nos hayamos definido al principio
+		"scheduling": { "days": 1 }, => Dias atras que lanzas el programa
+		"serviceProvider": {
+			"key": "httpv2", => Factory key que le pongas al agente
+			"httpConfiguration": {
+				"httpClassType": "BaseHttpClient", XXXXXXXXXX => Siempre ese valor
+				"deserializerClassType": "AlsoEnergyBinRawMessages",  XXXXXXXXXX => No Definiremos valor
+				"httpSourceServiceClassType": "BaseSourceService", XXXXXXXXXX => Siempre ese valor
+				"datalistEndPoint": {
+					"url": "https://api.alsoenergy.com/v2/Data/BinData?binSizes=Bin15Min", => Url de datos, o base url de todos los que uses
+					"queryKeys": [  => Query params de la llamada, Los que van entre porcentajes son los que remplazzara el programa, algunos genericos como (StartDate, EndDate, ...) los hara automaticos
+					{
+						"name": "from",
+						"value": "%StartDate%",
+						"enableEncoding": true
+					},
+					{
+						"name": "to",
+						"value": "%EndDate%",
+						"enableEncoding": true
+					}
+					]
+				},
+				"httpVerb": "POST", => Protocolo de la llamada de datos
+				"httpRequestTimeout": 60, XXXXXXXXXX => Siempre ese valor
+				"postBody": "[{\"HardwareId\":32518,\"SiteId\":34207,\"FieldName\":\"KwhAC\"},...", => Body Json por cadena en caso de no ser programable en clase. Tambien entre porcentajes lo que se quiera remplazar en el programa
+				"isFile": false, XXXXXXXXXX => Siempre ese valor
+				"maxTake": 200,  XXXXXXXXXX => Siempre ese valor
+				"authentication": { => Configuracion de authenticacion, preguntar a fran o a mi para encontrar alguno parecido y usar de base
+					"authenticationType": "alsoenergyoauth",
+					"username": "apifalck",
+					"password": "fkr_solar",
+					"oAuthConfiguration": {
+					"accessTokenName": "access_token",
+					"loginUri": "https://api.alsoenergy.com/auth/token/"
+					}
+				},
+				"filtersOptions": { => configuracion que usa para splitear las llamadas a la api por n minutos, y para definir el formato de la fecha que usaremos en los queryParams y en el body
+					"splitSchedulingJobOptions": {
+						"minutes": 360
+					},
+					"dateTimeFormat": "s" 
+				}
+			},
+			"deviceOptions": { => Filtros por deviceType en caso de que reutilizcemos el agente para distintos tipos de dispositivo
+				"sourceKeys": {
+					"enabled": true,
+					"filterBy": [
+						"WT"
+					]
+				}
+			}
+		}
+	}
+
+
+
+3º Creamos el type mapping y el source schema asociado (Diseñado para genericos, y con un sentido de transformacion automatica sobre todo en caso ficheros)
+	-Para el type mapping pondremos:
+		-Facility, Dataprovider, un nombre de table type (T0001 crear) y entityType
+		-En filter pondremos un trozo de la url de datos que pongamos en el job, y pondremos en el filter type contains (No nos compliquemos en el caso http)
+	-Para el source schema:
+		-Creamos una, seleccionando el table type correspondiente y rellenando la parte de 'Sort/Filter name' y 'Record date time name'
+
+
+
+********OPCIONALES (NO NECESARIOS DE PRIMERAS PARA LA CREACION DEL AGENTE)********
+
+4º (SOBRETODO EN CASO FICHERO) Añadimos device property mappings, Estos nos serviran para mover datos de una clave de device a otra clave de device
+	-Esto significa que si tengo todas mis propiedades en un device llamado 'COMMON_DEVICE', podre extraer propiedades que tenga a nuevos devices (al device key RS_0001 me llevo la prop irradiancia_ghi e irradiancia_poa)
+
+5º Añadir los tags correspondientes para que el synchro propague de manera correcta los tipos de device a nuestro synchro 
+

@@ -1,0 +1,527 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft Word - 2.GUÍA GENERAL TFM_DATA SCIENCE
+
+
+NORMATIVA ELABORACIÓN TFM  
+DATA SCIENCE 
+
+ 
+ 
+
+ 
+
+ 
+ 
+En este documento encontrarás una guía para la realización de tu Trabajo Fin de Máster, en el 
+que intentaremos dar respuestas a las dudas más frecuentes que suelen surgir a lo largo de 
+la elaboración de este. 
+ 
+Además de aspectos formales y normas de estilo del documento final, así como información 
+relativa al proceso de evaluación.1 
+ 
+ 
+
+1. Seguimiento y Tutorización 
+ 
+
+La Coordinación del Máster, organizará una sesión presencial/online general, con carácter 
+obligatorio, en la que se explicarán los requisitos para la realización del Trabajo Fin de Máster 
+y la metodología que seguirá cada tutoría y la presentación final ante el tribunal. 
+ 
+En la sesión inicial se indicará el calendario a seguir para cumplir con la entrega del TFM en la 
+fecha definida. 
+ 
+El TFM se realizará en grupo de libre elección por los estudiantes. 
+ 
+Una vez elegido el equipo de trabajo (máximo 4 integrantes por grupo y mínimo 1) los alumnos 
+deberán informar al Tutor el nombre de las personas que lo integran. La fecha aparecerá en 
+las actividades de Aprendizaje Colaborativo. 
+ 
+Tutor: 
+ 
+
+ El rol del tutor es guiar al equipo en el desarrollo del proyecto. 
+ El tutor determinará las tutorías presenciales u online, a las que será obligatoria la 
+
+asistencia de los estudiantes, y fijará el plan de trabajo a seguir. 
+ El tutor propondrá el día y horario en el que se realizará cada sesión (siempre de forma 
+
+coordinada con los alumnos). 
+ 
+ 
+Hitos: 
+ 
+
+ El tutor establecerá cuáles son los hitos y pautas para el entregable que habrá de 
+hacérselo llegar al tutor con, como mínimo, cinco días de antelación a las tutorías. 
+
+ Estos hitos son secciones del trabajo que habrán de estar completas y redactadas en 
+su totalidad para que puedan resolverse las dudas en las tutorías de la mejor forma 
+posible. 
+
+ En el transcurso de la realización del TFM cada tutor hará saber al alumno qué parte 
+del trabajo ha de estar terminada antes de cada una de las tres tutorías. En el caso de 
+que el alumno no haya terminado su entregable no tendrá derecho a esa tutoría. 
+
+ 
+ 
+ 
+
+ 
+1 El TFM sólo podrá ser evaluado una vez que se tenga constancia de que el alumno ha superado las evaluaciones previstas en 
+los módulos que integran el plan de estudios y dispone, por tanto, de todos los créditos necesarios para la obtención del título 
+de Máster. 
+
+
+
+NORMATIVA ELABORACIÓN TFM  
+DATA SCIENCE 
+
+ 
+ 
+
+ 
+
+ 
+Tutorías: 
+ 
+
+ La Coordinación Académica de IMF pondrá a disposición tres tutorías para que el tutor 
+del TFM pueda atender a cada grupo en ellas. Habiendo hecho llegar el entregable al 
+tutor sobre el hito establecido, los alumnos pasarán a tener 60 minutos de tutoría 
+presencial/online con él. 
+
+ En las tutorías se resolverán dudas del TFM referente a lo entregado, no siendo las 
+tutorías el momento de la entrega de documentación nueva, dado que el tutor no 
+tendrá tiempo de evaluar nuevos contenidos en cada una de las tutorías. 
+
+ En las tutorías se realizará la gestión actual del proyecto, pudiendo realizar cualquier 
+cambio que sea oportuno para la correcta coordinación del grupo con el fin de llegar a 
+los objetivos establecidos en el proyecto. 
+ 
+
+ 
+ 
+
+2. Estructura y Estilo TFM 
+
+ 
+ 
+El TFM ha de contener una estructura y unos contenidos mínimos para que pueda ser 
+defendido ante el Tribunal de Evaluación de Trabajos Fin de Máster de IMF: 
+ 
+Portada: 
+ 
+
+ La portada se ceñirá́ al modelo dado al alumno y deberá́ incluir: Nombre y logo de IMF. 
+ Máster en el que se está matriculado. o Título. 
+ Trabajo fin de máster. 
+ Nombre y dos apellidos de los autores. 
+ Nombre y dos apellidos del tutor 
+ Fecha de finalización. 
+
+ 
+Índice: 
+ 
+
+ Índice de contenidos: Deberá estar debidamente paginado. 
+ Índice de Tablas: Todas las tablas deberán estar claramente identificadas con su título 
+
+y página de ubicación. 
+ Índice de Gráficos: Todos los gráficos deben identificarse con título y página. 
+
+ 
+ 
+Resumen y palabras clave: 
+ 
+
+  Al principio del trabajo deberá́ incluirse un breve resumen cuya extensión sea entre 
+100 a 150 palabras. La lectura de este texto ha de dar una idea clara y concisa de lo 
+que se pretende, las conclusiones a las que se ha llegado y del procedimiento seguido. 
+
+ Bajo el título de «Palabras clave» se deben incluir entre seis y diez palabras que 
+resuman el contenido del trabajo y que lo diferencien del resto. 
+
+ Este apartado debe figurar primero en español y a continuación en inglés con el título 
+de abstract (resumen) y keywords (palabras clave). 
+
+ 
+Introducción: 
+
+
+
+NORMATIVA ELABORACIÓN TFM  
+DATA SCIENCE 
+
+ 
+ 
+
+ 
+
+ 
+ En la introducción se debe incluir una justificación de la elección del tema y el 
+
+planteamiento de los objetivos del trabajo. 
+ 
+ 
+ 
+Objetivos: 
+ 
+
+ Se deben identificar un objetivo general y al menos 3 específicos que se esperan 
+alcanzar con la propuesta general del TFM. 
+
+ 
+Cuerpo principal del proyecto: 
+ 
+Es la parte principal del TFM donde de una forma ordenada se procede a desarrollar el alcance 
+total del mismo. 
+ 
+
+ Extensión: Entre 100 y 150 páginas. Entre 60 y 100 páginas 
+ Estructura: Los apartados del trabajo se diferenciarán con el sistema de números (1, 
+
+2, 3…), y en los subapartados se utilizará el sistema de números separados por puntos 
+(1.1, 1.2, 1.1.1, 1.2.1). 
+
+ 
+Conclusiones: 
+ 
+Aquí se dará respuesta a las necesidades planteadas en la introducción y se validará el 
+cumplimiento de objetivos, se hará un cierre del alcance del TFM con una propuesta de 
+siguientes pasos en caso de que sea necesario, es altamente recomendable añadir 
+conclusiones relacionadas con trabajo o vías futuras del proyecto, se puede considerar 
+desligar este apartado en dos como, por ejemplo: 
+
+1. Conclusiones 
+2. Trabajo futuro. 
+
+  
+Referencias bibliográficas: 
+ 
+Se debe incluir una bibliografía completa con todas las fuentes que se han utilizado en el 
+trabajo, utilizando la normativa APA. 
+ 
+Anexos 
+ 
+Los anexos se utilizarán para recoger aquella información que, no siendo imprescindible para la 
+comprensión del cuerpo principal del proyecto, ayuda a sustentar, probar o completar un 
+argumento expuesto en el cuerpo principal. Por ejemplo, un archivo de configuración o un script. 
+ 
+ 
+En cuanto al estilo del TFM deberán tomarse en cuanto los siguientes puntos del formato. 
+ 
+Maquetado: 
+La versión digital de la memoria deberá́ estar maquetada de forma que se pueda imprimir 
+directamente sin perder el formato en PDF. 
+ 
+Formato del documento final:  
+ 
+
+
+
+NORMATIVA ELABORACIÓN TFM  
+DATA SCIENCE 
+
+ 
+ 
+
+ 
+
+Márgenes: 
+ Izquierdo: 2 cm. 
+ Derecho: 2 cm. 
+ Superior: 2 cm. 
+ Inferior: 2 cm. 
+
+ 
+Tipo de letra: Arial 11. Espacio interlineal: 1.5. 
+ 
+ 
+ 
+Sangría: 
+ 
+
+ En la bibliografía: Francesa: 1.25. o Libre en el resto del documento. 
+ Citas a pie de página: Arial 10. 
+
+ 
+Encabezado y pie de página: 
+ 
+
+ En el encabezado se hará́ constar «Apellido, Nombre» del autor el título del TFM. 
+ En el pie de página, se debe incluir la paginación. Con formato libre. 
+
+ 
+ 
+ 
+
+3. Presentación y Defensa del TFM 
+
+ 
+Entrega del TFM: 
+ 
+
+ El equipo entregará una copia, en formato digital, con los códigos, datasets, etc.… 
+necesarios de su TFM en la fecha y forma establecida. 
+
+ Cualquier corrección realizada posterior a la fecha de entrega establecida, no será 
+tomada en cuenta para la evaluación final. 
+
+ El tutor tiene la potestad de decidir si el TFM cumple con los requisitos mínimos para 
+ser presentado y defendido ante el Tribunal. 
+
+ Aquellos alumnos que no entreguen toda la documentación en los plazos establecidos 
+se considerarán “No Aptos” a efecto de calificación. 
+
+ 
+Exposición y defensa ante tribunal: 
+ 
+
+ Los TFM que cumplan los requisitos para ser presentados, deberán ser defendidos 
+ante los miembros del tribunal. 
+
+ La confirmación de la fecha y orden de exposición de los TFM serán comunicados una 
+vez que el tutor establezca que el proyecto es apto para su defensa. 
+
+ El tiempo de exposición del TFM será de 20 minutos; transcurrido el tiempo, se 
+detendrá la presentación y se dará la palabra al Tribunal quién contará con 10 minutos 
+de preguntas. 
+
+ El Tribunal evaluará el rigor académico, la adecuación a la realidad empresarial del 
+TFM y el sentido profesional de la presentación. 
+
+ El Tribunal indicará si el trabajo presentado está aprobado o no, pero no así la 
+calificación final que será comunicada por correo electrónico a todos los alumnos de 
+manera conjunta. 
+
+ 
+
+
+
+NORMATIVA ELABORACIÓN TFM  
+DATA SCIENCE 
+
+ 
+ 
+
+ 
+
+Propiedad Intelectual 
+ 
+
+ La propiedad intelectual del TFM pertenece a los alumnos que han participado en la 
+realización de este. 
+
+ En caso de que el autor o los autores quisieran reproducir editorialmente el TFM parcial 
+o totalmente, se comprometen a comunicarlo a IMF y a citar explícitamente que la 
+investigación fue realizada en colaboración con IMF Institución Académica. 
+
+ Los trabajos que presenten mayor calidad podrán exponerse por IMF a efectos 
+académicos solicitándose para ello el permiso por escrito de sus autores. 
+
+ 
+ 
+
+4. Evaluación del Trabajo Fin de Máster 
+ 
+Para la evaluación se tomará en cuenta tanto el contenido del documento escrito como la 
+defensa pública del mismo. Será necesario obtener una valoración superior a 5 puntos en 
+ambos apartados para poder obtener la calificación de apto. 
+ 
+La calificación global del TFM será el 70% del documento escrito y el 30% de la defensa pública 
+ante tribunal. El documento escrito y la defensa se valorarán utilizando los siguientes criterios: 
+ 
+
+Documento Escrito: 
+
+ Seguimiento de la metodología 
+ Cantidad y calidad de las fuentes de datos usadas     
+ Corrección en el   análisis predictivo de los datos.  
+ Detalle y conveniencia de los métodos usados para el análisis de la fuente de datos. 
+ Adecuación del tipo de gráfico seleccionado para la explicación de los resultados 
+
+obtenidos.  
+ Originalidad de las ideas.  
+
+ 
+Exposición y Defensa ante Tribunal: 
+ 
+La exposición del TFM se entiende como la venta del trabajo realizado por el equipo ante el 
+tribunal, resaltando los aspectos clave de este y como un resumen del documento. 
+ 
+
+ Información y contenidos de la exposición. 
+ Puesta en escena 
+ Soportes utilizados: exposición de herramientas visuales o los dashboards finalizados. 
+ Convicción en las respuestas 
+
+ 
+Proceso de Evaluación 
+ 
+El proceso inicia cuando el tutor indica si el TFM es apto2 para su defensa ante el Tribunal. En 
+caso contrario (no apto para su defensa), el equipo tendrá dos alternativas: 
+ 
+
+1. Presentar el TFM bajo su propio riesgo, siguiendo el procedimiento marcado por 
+Coordinación y el tutor. 
+
+ 
+2 La declaración de “apto para su defensa ante Tribunal” sólo indica que el trabajo cumple los mínimos necesarios para su 
+defensa; en ningún caso asegura el aprobado. 
+
+
+
+NORMATIVA ELABORACIÓN TFM  
+DATA SCIENCE 
+
+ 
+ 
+
+ 
+
+2. Presentar una nueva versión, con las correcciones necesarias, en la convocatoria 
+extraordinaria. 
+
+ 
+El Tribunal evaluará el TFM elaborando un informe con los puntos fuertes y débiles, 
+estableciendo la calificación final de la asignatura. En el caso de que un TFM sea calificado 
+como “suspenso”, el informe incluirá las recomendaciones oportunas para mejorar el TFM. 
+ 
+La calificación se adecuará a la escala numérica de 0 a 10 con expresión de un decimal y su 
+correspondiente calificación cualitativa: 
+ 
+0-4,9: Suspenso (SS) 
+5-6.9: Aprobado (AP) 
+7-8,9: Notable (NT) 
+9-10: Sobresaliente (SB) 
+ 
+ 
+Tribunal 
+ 
+El tribunal estará compuesto por dos o tres personas elegidas entre el claustro docente de 
+IMF y profesionales del sector, que ejercerán de presidente, secretario y vocal. 
+ 
+ 
+
+5. Rúbrica Final del Trabajo Fin de Máster 
+ 
+Modelo e Idea de Negocio (10%) 
+ 
+
+ Plantear su empresa, por medio de visión, misión y valores de la empresa. 
+ Entender el modelo de negocio y lo que ofrecen para el negocio. 
+ Plazos de desarrollo del TFM para obtener el producto o servicios que quieren ofrecer, 
+
+así como el roadmap de la empresa en 1-3 años basada en lo que han conseguido. 
+ Lean Canvas de su producto/empresa. 
+
+ 
+Ingesta y tratamiento de fuente de datos (20%) 
+ 
+Características de las mismas: 
+ 
+
+ Identificación de un dataset pequeño, antiguo y muy conocido del repositorio UCI se 
+consideraría de interés básico. 
+
+ Un dataset obtenido a través del uso de un API REST complejo sería de interés 
+avanzado, como el de Stack Exchange o un dataset complejo multitabla y poco 
+conocido de una competición Kaggle. 
+
+ También se debe tener en cuenta el interés de las preguntas formuladas por el dataset, 
+que pueden ser más o menos complejas. 
+
+ 
+Desarrollo del proyecto (50%) 
+ 
+
+ Realización de un modelo de arquitectura que susteten el servicio o producto a vender, 
+con su mapa de arquitectura (Cloud, on-promise o híbrido). 
+
+ Ingesta d ellos datos en una estructura (Hadoop / Spark). 
+
+
+
+NORMATIVA ELABORACIÓN TFM  
+DATA SCIENCE 
+
+ 
+ 
+
+ 
+
+ Almacenado de los datos en estructuras SQL / NoSQL, se valorará crear un sistema de 
+datos en bruto con datos NoSQL, y todo el proceso de realización de un análisis de 
+datos obtenidos – Data Clean con datos inservibles, repetidos, nulos, mal formateados, 
+es decir transformar los datos RAW o en bruto en útiles y formateados. Se prefiere un 
+modelo MDM con varias capas. 
+
+ Creación de un diccionario de datos basado en al menos el metadatado técnico y 
+funcional de los datos. 
+
+ El análisis de los datos: 
+- Los pasos dados 
+- Las conclusiones son acertadas y se justifican y explican adecuada y 
+
+extensamente. 
+- Entrenamientos, modelos analíticos utilizados… 
+
+ Se evidencia un buen conocimiento de las materias estudiadas. 
+ Se presentan código, modelos, etc. Que son ricos y complejos, en los módulos se 
+
+consideraría solamente un desarrollo básico. 
+ Se consideraría un desarrollo avanzado si se utilizan funciones, bibliotecas o técnicas 
+
+adicionales (siempre que aporten algo significativo al análisis, no por su mera 
+inclusión) y se buscan las operaciones más eficientes y adecuadas. 
+
+ 
+Presentación de los datos (20%) 
+ 
+
+ Definición de los principales KPI’s de su modelo. 
+ Cuadro de Mando operativo y CMI’s 
+ Herramientas usadas para la Visualización de los datos. Calidad en la presentación 
+
+de los mismos.  
+ 
+
+ 
+ 
+ 
+ 
+
+
