@@ -1,5 +1,4 @@
 .env
 flagged/
 .mypy_cache
-/transcript
 docs.txt
