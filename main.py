@@ -4,6 +4,8 @@ from src.docsLoader import *
 import streamlit as st
 from PIL import Image
 
+OPEN_AI_API_KEY = st.secrets["open-key"]
+
 path = 'data/'
 if not os.path.exists(path):
     os.mkdir(path)
