@@ -17,16 +17,18 @@ def youtubeExtractor(url, name):
     
     if checker(name) == 'exists':
         return 2
-    
+    st.warning("before loader")
     loader = GenericLoader(
         YoutubeAudioLoader(url,save_dir),
         OpenAIWhisperParser()
     )
+    st.warning("after loader")
     docs = loader.load()
-    
+    st.warning("after after loader")
     combined_docs = [doc.page_content for doc in docs]
+    st.warning("after after after loader")
     string_data = " ".join(combined_docs)
-
+    st.warning("before loader")
     save_txt(string_data, name)
     return 3
         
