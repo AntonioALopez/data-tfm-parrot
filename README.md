@@ -15,17 +15,16 @@ Webapp that summarizes data inputted as Word document, Youtube video, PDF docume
 
 1. Select input type: Word document, Youtube video, PDF document, TXT document.
 
-![select-input](https://github.com/AntonioALopez/data-tfm-parrot/assets/77520366/79840c2a-bc4f-42a0-b3ce-72e293c6b357)
+![select-input](https://github.com/AntonioALopez/data-tfm-parrot/assets/77520366/d1bb5191-2ffe-4e4e-8157-365bda75e73f)
 
 2. The app will extract the text from the input and store it for the user to select which text to analyze.
    
-![select-text](https://github.com/AntonioALopez/data-tfm-parrot/assets/77520366/33c08381-7aab-403c-8523-2efe49e2014d)
-
+![select-text](https://github.com/AntonioALopez/data-tfm-parrot/assets/77520366/e1820799-7000-41b2-ac0d-5c271d85aee7)
 
 3. Prompt to get answers or a summary about the text selected.
 
-![select-prompt](https://github.com/AntonioALopez/data-tfm-parrot/assets/77520366/5968bd3b-9b54-4411-9be6-4bcc776ec9e4)
+![select-prompt](https://github.com/AntonioALopez/data-tfm-parrot/assets/77520366/1ce3b429-7775-4238-ae3b-4c42dea2ba29)
 
 3. The app will give you an answer!
 
-![get-answer](https://github.com/AntonioALopez/data-tfm-parrot/assets/77520366/c8216390-2421-46e6-88ac-23d85d590d7d)
+![get-answer](https://github.com/AntonioALopez/data-tfm-parrot/assets/77520366/bd2952df-461f-4201-a8ff-387cfbdcff6c)
