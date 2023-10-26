@@ -2,3 +2,4 @@
 flagged/
 .mypy_cache
 docs.txt
+src/__pycache__
