@@ -1,6 +1,6 @@
 # Parrot - Datalus
 
-Webapp that gets as input 
+Webapp that summarizes data inputted as Word document, Youtube video, PDF document, TXT document.
 
 ## Table of Contents
 
