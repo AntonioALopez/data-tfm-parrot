@@ -80,7 +80,7 @@ def checker(name):
         return 'exists'
     
 def text_cleaning(text):
-    return text.replace("\n \n \n", "\n").replace("\n \n", "\n")
+    return text.replace("\n\n", "\n").replace("", " - ")
     
 def save_txt(string_data, name):
     '''Saves text into database'''
