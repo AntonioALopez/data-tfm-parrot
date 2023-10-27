@@ -3,6 +3,8 @@ from langchain.document_loaders.parsers import OpenAIWhisperParser
 from langchain.document_loaders.blob_loaders.youtube_audio import YoutubeAudioLoader
 import os, shutil, docx
 from io import StringIO
+import tika
+tika.initVM()
 from tika import parser 
 import streamlit as st
 
