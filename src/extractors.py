@@ -36,8 +36,8 @@ def youtubeExtractor(url, name):
 
     combined_docs = [doc.page_content for doc in docs]
     string_data = " ".join(combined_docs)
-
-    save_txt(string_data, name)
+    clean_text = text_cleaning(string_data)
+    save_txt(clean_text, name)
     return 3
         
 def text_extractor(uploaded_file, name):
@@ -47,7 +47,8 @@ def text_extractor(uploaded_file, name):
     
     stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
     string_data = stringio.read()
-    save_txt(string_data, name)
+    clean_text = text_cleaning(string_data)
+    save_txt(clean_text, name)
     
     
 def word_extractor(uploaded_file, name):
@@ -58,19 +59,18 @@ def word_extractor(uploaded_file, name):
     doc = docx.Document(uploaded_file)
     paragraphs = [p.text for p in doc.paragraphs]
     string_data = '\n'.join(paragraphs)
-    save_txt(string_data, name)
+    clean_text = text_cleaning(string_data)
+    save_txt(clean_text, name)
 
 
 def pdf_extractor(uploaded_file, name):
     '''Extracts text from pdf documents'''
     if checker(name) == 'exists':
         return 2
-    st.write("new doc")
     text = parser.from_file(uploaded_file)
-    st.write(text)
     string_data = text['content']
-    st.write(string_data = text['content'])
-    save_txt(string_data, name)
+    clean_text = text_cleaning(string_data)
+    save_txt(clean_text, name)
         
         
 def checker(name):
@@ -79,6 +79,8 @@ def checker(name):
     if os.path.exists(path) and name != '':
         return 'exists'
     
+def text_cleaning(text):
+    return text.replace("\n", " ")
     
 def save_txt(string_data, name):
     '''Saves text into database'''
