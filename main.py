@@ -1,6 +1,6 @@
 
-from lang_call import text_selector, api_call
-from extractors import youtubeExtractor, text_extractor, word_extractor, pdf_extractor
+from src.lang_call import text_selector, api_call
+from src.extractors import youtubeExtractor, text_extractor, word_extractor, pdf_extractor
 import streamlit as st
 from PIL import Image
 import os
