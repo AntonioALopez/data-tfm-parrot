@@ -13,13 +13,17 @@ directory = "./data/"
 # OPEN_AI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPEN_AI_API_KEY = st.secrets["open-key"]
   
+# AMPLIAR
 def text_selector(name):
+    '''Select which file to use from cloud storage'''
     path = f"{directory}{name}.txt"
     with open(path, "r") as f:
         string_data = f.read()
     return string_data
-        
-def gpt_call(string_data):
+
+
+def api_call(string_data):
+    '''API Call'''
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=150)
     splits = text_splitter.split_text(string_data)
     vectordb = FAISS.from_texts(splits, OpenAIEmbeddings())

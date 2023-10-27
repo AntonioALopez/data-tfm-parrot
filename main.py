@@ -1,12 +1,14 @@
 
-from src.openAI import *
-from src.docsLoader import *
+from lang_call import text_selector, api_call
+from extractors import youtubeExtractor, text_extractor, word_extractor, pdf_extractor
 import streamlit as st
 from PIL import Image
+import os
 
 # from dotenv import load_dotenv
 # load_dotenv(".env")
 # OPEN_AI_API_KEY = os.getenv("OPENAI_API_KEY")
+
 OPEN_AI_API_KEY = st.secrets["open-key"]
 
 path = 'data/'
@@ -166,12 +168,12 @@ if len(list_of_files) != 0:
     with st.spinner('Training on text...'):
         string_data = text_selector(option)
         st.text_area('Text Selected:', value=string_data)
-        call = gpt_call(string_data)
+        call = api_call(string_data)
         
     prompt = st.chat_input("Ask something")
     if prompt:
         with st.spinner('Analizing prompt...'):
-            response = call.run(prompt)
+            response = call.run(prompt)    #CALL
             save_results(prompt, response)
     st.markdown("""---""")        
     show_results()

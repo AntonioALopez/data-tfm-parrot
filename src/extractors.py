@@ -63,9 +63,11 @@ def pdf_extractor(uploaded_file, name):
     '''Extracts text from pdf documents'''
     if checker(name) == 'exists':
         return 2
-    
+    st.write("new doc")
     text = parser.from_file(uploaded_file)
+    st.write(text)
     string_data = text['content']
+    st.write(string_data = text['content'])
     save_txt(string_data, name)
         
         
@@ -77,6 +79,7 @@ def checker(name):
     
     
 def save_txt(string_data, name):
+    '''Saves text into database'''
     path = f"{directory}{name.replace(' ','_')}.txt"    
     with open(path, "w") as f:
         f.write(string_data)
