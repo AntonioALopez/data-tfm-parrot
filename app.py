@@ -5,9 +5,9 @@ import streamlit as st
 from PIL import Image
 import os
 
-# from dotenv import load_dotenv
-# load_dotenv(".env")
-# OPEN_AI_API_KEY = os.getenv("OPENAI_API_KEY")
+# # from dotenv import load_dotenv
+# # load_dotenv(".env")
+# # OPEN_AI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 OPEN_AI_API_KEY = st.secrets["open-key"]
 
@@ -72,7 +72,7 @@ def youtube_form():
                             
                             if extraction == 3:
                                 st.success(f" {name}.txt saved on database", icon="✅")
-                            
+                                
                         except:
                             st.warning('URL not valid')
                             
@@ -133,16 +133,16 @@ def pdf_form():
         submit_button = st.form_submit_button("Submit File")
         if submit_button:
             with st.spinner('Extracting text from document...'):
-                #try:
-                response = pdf_extractor(uploaded_file, name)
-                if response == 2:
-                    st.success(f" {name}.txt already saved on database", icon="✅")
-                # except:
-                #     st.warning('Document or name not valid')
+                try:
+                    response = pdf_extractor(uploaded_file, name)
+                    if response == 2:
+                        st.success(f" {name}.txt already saved on database", icon="✅")
+                except:
+                    st.warning('Document or name not valid')
     
 
 with st.sidebar:
-    image = Image.open('parrot_innovative2.png')
+    image = Image.open('references/parrot_innovative2.png')
 
     st.image(image)
     choice = st.selectbox("Select input type:",
