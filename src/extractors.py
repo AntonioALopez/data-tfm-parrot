@@ -11,7 +11,7 @@ import streamlit as st
 # from dotenv import load_dotenv
 # load_dotenv(".env")
 # OPEN_AI_API_KEY = os.getenv("OPENAI_API_KEY")
-OPEN_AI_API_KEY = st.secrets["open-key"]
+OPENAI_API_KEY = st.secrets["open-key"]
 
 directory = "./data/"
 save_dir="transcript"

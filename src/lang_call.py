@@ -11,8 +11,10 @@ directory = "./data/"
 # from dotenv import load_dotenv
 # load_dotenv(".env")
 # OPEN_AI_API_KEY = os.getenv("OPENAI_API_KEY")
-OPEN_AI_API_KEY = st.secrets["open-key"]
-  
+OPENAI_API_KEY = st.secrets["open-key"]
+
+os.environ["OPENAI_API_KEY"] = st.secrets["open-key"]
+
 # AMPLIAR
 def text_selector(name):
     '''Select which file to use from cloud storage'''
