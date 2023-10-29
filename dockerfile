@@ -16,11 +16,10 @@ COPY requirements.txt requirements.txt
 COPY packages.txt packages.txt
 RUN pip install -U pip
 RUN pip install -r requirements.txt
-
+RUN pip install --upgrade streamlit 
 
 # Copy app code and set working directory
 COPY . .
-
 
 # Expose port you want your app on
 EXPOSE 8501

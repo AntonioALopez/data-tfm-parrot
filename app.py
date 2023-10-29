@@ -9,7 +9,8 @@ import os
 # # load_dotenv(".env")
 # # OPEN_AI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-OPEN_AI_API_KEY = st.secrets["open-key"]
+OPENAI_API_KEY = st.secrets["open-key"]
+os.environ["OPENAI_API_KEY"] = st.secrets["open-key"]
 
 path = 'data/'
 if not os.path.exists(path):
@@ -45,14 +46,12 @@ def youtube_form():
     with st.form("text-extract-youtube"):
                 url = st.text_input(
                         "Enter link for youtube video here 👇",
-                        label_visibility='visible',
                         disabled=False,
                         placeholder="https://www.youtube.com/watch?v=AiOUojVd6xQ",
                         key='firstQuery'
                 )
                 name = st.text_input(
                         "Enter a short name for text document to be extracted and saved",
-                        label_visibility='visible',
                         disabled=False,
                         max_chars=14,
                         placeholder="Name for file",
@@ -81,7 +80,6 @@ def text_form():
         uploaded_file = st.file_uploader('Upload an article', type='txt')
         name = st.text_input(
                         "Enter a short name for text document to be extracted and saved",
-                        label_visibility='visible',
                         disabled=False,
                         max_chars=14,
                         placeholder="Name for file",
@@ -103,7 +101,6 @@ def docx_form():
         uploaded_file = st.file_uploader('Upload an document', type='docx')
         name = st.text_input(
                         "Enter a short name for text document to be extracted and saved",
-                        label_visibility='visible',
                         disabled=False,
                         max_chars=14,
                         placeholder="Name for file",
@@ -124,7 +121,6 @@ def pdf_form():
         uploaded_file = st.file_uploader('Upload an document', type='pdf')
         name = st.text_input(
                         "Enter a short name for text document to be extracted and saved",
-                        label_visibility='visible',
                         disabled=False,
                         max_chars=14,
                         placeholder="Name for file",
