@@ -74,68 +74,30 @@ def youtube_form():
                                 
                         except:
                             st.warning('URL not valid')
-                            
-def text_form():
-    with st.form("text-extract-text"):
-        uploaded_file = st.file_uploader('Upload an article', type='txt')
-        name = st.text_input(
-                        "Enter a short name for text document to be extracted and saved",
+  
+def form(typeDoc):
+    with st.form(f"{typeDoc}-extract-text"):
+        uploaded_file = st.file_uploader('Upload an article', type=typeDoc)
+        name = st.text_input("Enter a short name for text document to be extracted and saved",
                         disabled=False,
                         max_chars=14,
                         placeholder="Name for file",
-                        key='text_extraction',
-                )
+                        key='text_extraction')
         
         submit_button = st.form_submit_button("Submit File")
         if submit_button:
             with st.spinner('Extracting text from document...'):
                 try:
-                    response = text_extractor(uploaded_file, name)
+                    if typeDoc == 'txt':
+                        response = text_extractor(uploaded_file, name)
+                    if typeDoc == 'docx':
+                        response = word_extractor(uploaded_file, name)
+                    if typeDoc == 'pdf':
+                        response = pdf_extractor(uploaded_file, name)     
                     if response == 2:
                         st.success(f" {name}.txt already saved on database", icon="✅")
                 except:
                     st.warning('Document or name not valid')
-
-def docx_form():
-    with st.form("docx-extract-text"):
-        uploaded_file = st.file_uploader('Upload an document', type='docx')
-        name = st.text_input(
-                        "Enter a short name for text document to be extracted and saved",
-                        disabled=False,
-                        max_chars=14,
-                        placeholder="Name for file",
-                        key='text_extraction',
-                )
-        submit_button = st.form_submit_button("Submit File")
-        if submit_button:
-            with st.spinner('Extracting text from document...'):
-                try:
-                    response = word_extractor(uploaded_file, name)
-                    if response == 2:
-                        st.success(f" {name}.txt already saved on database", icon="✅")
-                except:
-                    st.warning('Document or name not valid')
-                    
-def pdf_form():
-    with st.form("pdf-extract-text"):
-        uploaded_file = st.file_uploader('Upload an document', type='pdf')
-        name = st.text_input(
-                        "Enter a short name for text document to be extracted and saved",
-                        disabled=False,
-                        max_chars=14,
-                        placeholder="Name for file",
-                        key='text_extraction',
-                )
-        submit_button = st.form_submit_button("Submit File")
-        if submit_button:
-            with st.spinner('Extracting text from document...'):
-                try:
-                    response = pdf_extractor(uploaded_file, name)
-                    if response == 2:
-                        st.success(f" {name}.txt already saved on database", icon="✅")
-                except:
-                    st.warning('Document or name not valid')
-    
 
 with st.sidebar:
     image = Image.open('references/parrot_innovative2.png')
@@ -148,13 +110,13 @@ with st.sidebar:
         youtube_form()
         
     if choice == 'Text Document':
-        text_form()
+        form('txt')
         
     if choice == 'Docx Document':
-        docx_form()
+        form('docx')
         
     if choice == 'PDF Document':
-        pdf_form()
+        form('pdf')
 
 list_of_files = os.listdir("data/")
 if len(list_of_files) != 0:
