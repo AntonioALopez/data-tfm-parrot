@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 ENV PATH="${PATH}:/usr/local/lib/python3.10/site-packages"
 ENV PATH="${PATH}:/usr/local/lib/python3.10"
