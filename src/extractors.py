@@ -1,6 +1,7 @@
 from langchain.document_loaders.generic import GenericLoader
 from langchain.document_loaders.parsers import OpenAIWhisperParser
 from langchain.document_loaders.blob_loaders.youtube_audio import YoutubeAudioLoader
+from src.google_bucket import upload_blob
 import os, shutil, docx, tika
 from io import StringIO 
 tika.initVM()
@@ -15,7 +16,7 @@ OPENAI_API_KEY = st.secrets["open-key"]
 directory = "./data/"
 save_dir="transcript"
 
-def youtubeExtractor(url, name):
+def youtubeExtractor(url, name, user):
     '''Extracts text from Youtube URL'''
     if name == '' or url[0] == '':
         return 1
@@ -36,10 +37,10 @@ def youtubeExtractor(url, name):
     combined_docs = [doc.page_content for doc in docs]
     string_data = " ".join(combined_docs)
     clean_text = text_cleaning(string_data)
-    save_txt(clean_text, name)
+    save_txt(clean_text, name, user)
     return 3
         
-def text_extractor(uploaded_file, name):
+def text_extractor(uploaded_file, name, user):
     '''Extracts text from text documents'''
     if checker(name) == 'exists':
         return 2
@@ -47,10 +48,10 @@ def text_extractor(uploaded_file, name):
     stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
     string_data = stringio.read()
     clean_text = text_cleaning(string_data)
-    save_txt(clean_text, name)
+    save_txt(clean_text, name, user)
     
     
-def word_extractor(uploaded_file, name):
+def word_extractor(uploaded_file, name, user):
     '''Extracts text from docx documents'''
     if checker(name) == 'exists':
         return 2
@@ -59,17 +60,17 @@ def word_extractor(uploaded_file, name):
     paragraphs = [p.text for p in doc.paragraphs]
     string_data = '\n'.join(paragraphs)
     clean_text = text_cleaning(string_data)
-    save_txt(clean_text, name)
+    save_txt(clean_text, name, user)
 
 
-def pdf_extractor(uploaded_file, name):
+def pdf_extractor(uploaded_file, name, user):
     '''Extracts text from pdf documents'''
     if checker(name) == 'exists':
         return 2
     text = parser.from_file(uploaded_file)
     string_data = text['content']
     clean_text = text_cleaning(string_data)
-    save_txt(clean_text, name)
+    save_txt(clean_text, name, user)
         
         
 def checker(name):
@@ -81,9 +82,11 @@ def checker(name):
 def text_cleaning(text):
     return text.replace("\n\n", "\n").replace("", " - ")
     
-def save_txt(string_data, name):
+def save_txt(string_data, name, user):
     '''Saves text into database'''
-    path = f"{directory}{name.replace(' ','_')}.txt"    
-    with open(path, "w") as f:
+    local_path = f"{directory}{name.replace(' ','_')}.txt"
+    gcs_path = f"{user}/{name.replace(' ','_')}.txt"
+    
+    with open(local_path, "w") as f:
         f.write(string_data)
-        
+    upload_blob(local_path, gcs_path)

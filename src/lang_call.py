@@ -3,6 +3,7 @@ from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from src.google_bucket import download_blob
 import streamlit as st
 import os
 
@@ -16,11 +17,14 @@ OPENAI_API_KEY = st.secrets["open-key"]
 os.environ["OPENAI_API_KEY"] = st.secrets["open-key"]
 
 # AMPLIAR
-def text_selector(name):
+def text_selector(name, user):
     '''Select which file to use from cloud storage'''
     path = f"{directory}{name}.txt"
+    download_blob(f"{user}/{name}.txt", path)
+    
     with open(path, "r") as f:
         string_data = f.read()
+    print(f"Text {path} found")
     return string_data
 
 

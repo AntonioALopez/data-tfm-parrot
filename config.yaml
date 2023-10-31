@@ -1,0 +1,18 @@
+credentials:
+  usernames:
+    antonioalvarado:
+      email: alvarado.antonio.lo@gmail.com
+      name: Antonio Alvarado
+      password: $2b$12$UIZxCWy2mUeTpWb/sWcfL.Iz4MYiqwyDhsZFfFxwRZQSxApuiwLQa
+    abelsoriano:
+      email: abelsoriano
+      name: Abel Soriano
+      password: $2b$12$g84aSBoE19oo7m8hJlxU8eoCG6q7GllOUHYln4zTAFn6IHwSoFe1y
+cookie:
+  expiry_days: 90
+  key: signature
+  name: auth
+preauthorized:
+  emails:
+  - alvarado.antonio.lo@gmail.com
+  - hidroteveca@gmail.com
