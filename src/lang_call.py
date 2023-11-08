@@ -28,8 +28,8 @@ def text_selector(name, user):
     return string_data
 
 
-def api_call(string_data):
-    '''API Call'''
+def api_request(string_data):
+    '''API Request'''
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=150)
     splits = text_splitter.split_text(string_data)
     vectordb = FAISS.from_texts(splits, OpenAIEmbeddings())
@@ -37,6 +37,6 @@ def api_call(string_data):
     return RetrievalQA.from_chain_type(
         llm=ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0),
         chain_type="stuff",
-        retriever=vectordb.as_retriever(),
+        retriever=vectordb.as_retriever()
     )
     

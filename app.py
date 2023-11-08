@@ -1,5 +1,5 @@
 
-from src.lang_call import text_selector, api_call
+from src.lang_call import text_selector, api_request
 from src.extractors import youtubeExtractor, text_extractor, word_extractor, pdf_extractor
 import streamlit as st
 import streamlit_authenticator as stauth
@@ -163,11 +163,14 @@ if st.session_state["authentication_status"]:
             st.session_state.option = option
             with st.spinner('Training on text...'):
                 if option != None:
+                    
                     print("Selecting Text")
-                    string_data = text_selector(option, user)                    
+                    string_data = text_selector(option, user)    
+                    if 'text_train' not in st.session_state:
+                        st.session_state.text_train = [string_data]                
                     st.session_state.text_train = [string_data]
                     print("NEW TEXT")
-                    st.session_state.call = api_call(string_data)
+                    st.session_state.call = api_request(string_data)
                     print("TRAINED")
                         
                         
