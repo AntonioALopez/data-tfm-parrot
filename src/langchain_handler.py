@@ -29,7 +29,7 @@ def text_selector(name, user):
 
 def api_request(string_data):
     '''API Request'''
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=150)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1400, chunk_overlap=150)
     splits = text_splitter.split_text(string_data)
     vectordb = FAISS.from_texts(splits, OpenAIEmbeddings())
     

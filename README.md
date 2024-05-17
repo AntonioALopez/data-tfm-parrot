@@ -1,4 +1,4 @@
-# Parrot - Datalus
+# Parrot Assistant
 
 Webapp that summarizes data inputted as Word document, Youtube video, PDF document, TXT document.
 
@@ -9,7 +9,7 @@ Webapp that summarizes data inputted as Word document, Youtube video, PDF docume
 
 ## Demo
 
-[Link for Demo.](https://parrot.streamlit.app/) 
+[Link for Demo.]() 
 
 ## Usage
 
