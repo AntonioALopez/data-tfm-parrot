@@ -16,7 +16,6 @@ OPENAI_API_KEY = st.secrets["open-key"]
 
 os.environ["OPENAI_API_KEY"] = st.secrets["open-key"]
 
-# AMPLIAR
 def text_selector(name, user):
     '''Select which file to use from cloud storage'''
     path = f"{directory}{name}.txt"

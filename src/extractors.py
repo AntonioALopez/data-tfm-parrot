@@ -80,7 +80,17 @@ def checker(name):
         return 'exists'
     
 def text_cleaning(text):
-    return text.replace("\n\n", "\n").replace("", " - ")
+    separated_text = text.replace("", " - ").split("\n")
+
+    new_one = ""
+    for sentence in separated_text:
+        if len(sentence) < 10:
+            new_one = "".join((new_one, sentence))
+            
+        else:
+            new_one = "\n".join((new_one, sentence))
+            
+    return new_one
     
 def save_txt(string_data, name, user):
     '''Saves text into database'''

@@ -1,5 +1,5 @@
 
-from src.lang_call import text_selector, api_request
+from langchain_handler import text_selector, api_request
 from src.extractors import youtubeExtractor, text_extractor, word_extractor, pdf_extractor
 import streamlit as st
 import streamlit_authenticator as stauth
@@ -35,7 +35,7 @@ authenticator = stauth.Authenticate(
     config['preauthorized']
 )
 
-authenticator.login('Login', 'main')
+authenticator.login()
 
 if st.session_state["authentication_status"]:
     
@@ -156,7 +156,7 @@ if st.session_state["authentication_status"]:
             
     if len(list_of_blobs) != 0:
         new_set = {x.removesuffix('.txt') for x in matched_values}
-        option = st.selectbox('Select document to use as base', (new_set))
+        option = st.selectbox('Select document to use as base', (new_set), placeholder='Test')
         
         if 'option' not in st.session_state or st.session_state.option != option:
             print("CAMBIO DE OPCION")
